@@ -40,7 +40,5 @@ app.get('/currency', (req, res) => {
         }).catch((err) => console.log(err))
 })
 
-app.listen(PORT, () => {
-    console.log(`server running on PORT ${PORT}`)
-})
+app.listen(process.env.PORT || 5000)
 
