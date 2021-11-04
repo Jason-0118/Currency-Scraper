@@ -1,0 +1,1 @@
+exports.connection_string = "mongodb+srv://jason:123@cluster0.wyyns.mongodb.net/currency?retryWrites=true&w=majority";
