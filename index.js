@@ -2,8 +2,13 @@ const PORT = process.env.PORT || 8000
 const express = require('express')
 const axios = require('axios')
 const cheerio = require('cheerio')
-
+const cors = require('cors')
 const app = express()
+app.use(
+    cors({
+        origin: "*",
+    })
+)
 const wholeList = []
 const currencyList = []
 const individualCurrency = []
@@ -11,7 +16,6 @@ const individualCurrency = []
 app.get('/', (req, res) => {
     res.json('Welcome to my currency rate API')
 })
-
 
 app.get('/currency', (req, res) => {
     axios.get('https://fx-rate.net/USD/')
@@ -81,3 +85,4 @@ app.get('/currency/:name', (req, res) => {
 
 app.listen(PORT, () => console.log(`server running on PORT ${PORT}`))
 
+//https://cs361-currency-scraper.herokuapp.com/
